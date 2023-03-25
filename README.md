@@ -84,6 +84,10 @@ const writableCounter = selector({
 });
 ```
 
+## Known Issues
+
+I forgot it......
+
 ## License
 
 Licensed under the MIT License.

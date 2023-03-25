@@ -45,57 +45,6 @@ const useLycorisValue = <T>(
     unsubscribe();
   });
 
-  /*
-  const [[version, valueFromReducer, atomFromReducer], rendererIfChanged] =
-    useReducer<
-      Reducer<
-        [HistoricalVersionObject | undefined, T, IAtom<T>],
-        HistoricalVersionObject | undefined
-      >,
-      HistoricalVersionObject | undefined
-    >(
-      (prev, nextVersion) => {
-        const nextValue = getAtomValue(nextVersion);
-        if (Object.is(prev[1], nextValue) && prev[2] === state) {
-          return prev;
-        }
-
-        return [nextVersion, nextValue, state];
-      },
-      versionFromProvider,
-      (initialVersion: HistoricalVersionObject | undefined) => {
-        const initialValue = getAtomValue(initialVersion);
-        return [initialVersion, initialValue, state] as any; // any じゃないんだよ
-      }
-    );
-
-  let value: T = valueFromReducer;
-  if (atomFromReducer != state) {
-    rendererIfChanged(version);
-    value = getAtomValue(version);
-  }
-
-  useEffect(() => {
-    const { v: versionFromProvider } = container;
-    if (versionFromProvider) {
-      store.commitAtom(state, versionFromProvider);
-    }
-
-    const unsubscribe = store.subscribeAtom(
-      state,
-      rendererIfChanged,
-      versionFromProvider
-    );
-    rendererIfChanged(versionFromProvider);
-
-    return unsubscribe;
-  }, [store, state, container]);
-
-  useEffect(() => {
-    store.commitAtom(state, version);
-  }, [state, version]);
-  */
-
   return readonly(snapshot) as ComputedRef<T>;
 };
 
