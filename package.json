@@ -1,6 +1,6 @@
 {
   "name": "@natsuneko-laboratory/lycoris",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lycoris is a state management library inspired by Recoil and Jotai, but for Vue 3 and Vue 2 with Composition API",
   "main": "./dist/lycoris.js",
   "exports": {
